@@ -29,8 +29,9 @@ article .bg {
 #photos .bg { background-image: url('../img/bg/photos.jpg'); }
 #misc   .bg { background-image: url('../img/bg/misc.jpg'); }
 
-article:hover  .bg { opacity: 0.1; }
-article:target .bg { opacity: 1;  z-index: -1; }
+article:hover   .bg { opacity: 0.1; }
+article:target  .bg { opacity: 1;  z-index: -1; }
+#contact:target .bg { opacity: 1;  z-index: -1; }
 
 #align {
 	position: absolute;
