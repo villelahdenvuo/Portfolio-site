@@ -1,0 +1,31 @@
+# Use UTF-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 10 days"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/x-icon "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|css|xml|gz)$">
+        Header append Vary Accept-Encoding
+    </FilesMatch>
+    <FilesMatch "\.(ico|jpe?g|png|gif|swf|webp)$">  
+        Header set Cache-Control "public"  
+    </FilesMatch>  
+    <FilesMatch "\.(css)$">  
+        Header set Cache-Control "public"  
+    </FilesMatch>  
+    <FilesMatch "\.(js)$">  
+        Header set Cache-Control "private"  
+    </FilesMatch>  
+    <FilesMatch "\.(html?|php)$">  
+        Header set Cache-Control "private, must-revalidate"  
+    </FilesMatch>
+</IfModule>
