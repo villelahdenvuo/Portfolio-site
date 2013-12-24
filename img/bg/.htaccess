@@ -1,0 +1,20 @@
+AddType image/webp .webp
+
+# Enable rewrite
+RewriteEngine On
+
+# Does browser support WebP?
+RewriteCond %{HTTP_ACCEPT} \bimage/webp\b
+
+# Capture image name
+RewriteCond %{REQUEST_URI}  (.*)(\.jpe?g|png)$
+
+# if you don't have all jpg/png images available
+# as webp then you want to uncomment the next line
+# so apache first checks if there is a webp file
+# otherwise leave it disabled as it removes the
+# need to query the disk
+#RewriteCond %{DOCUMENT_ROOT}%1.webp -f
+
+# Route to WebP image
+RewriteRule .* %1.webp [T=image/webp]
