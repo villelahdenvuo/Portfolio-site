@@ -158,8 +158,8 @@ article #fill {
 
 /* Interactivity */
 
-article:hover .bg { opacity: 0.1; }
-article:target .bg, #contact:target .bg {
+article a:hover .bg { opacity: 0.1; }
+article:target a .bg, #contact:target a .bg {
 	opacity: 1;
 	z-index: -1;
 	-webkit-transform: translateX(0);
