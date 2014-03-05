@@ -39,6 +39,19 @@ a {
 	font-weight: bold;
 }
 
+a[href^="http"]:before {
+	content: '\f08e';
+	font-family: 'FontAwesome';
+	padding: 0 3px 0 0;
+	display: inline-block;
+	font-size: 8px;
+}
+
+/* No symbols for contact links. */
+td > a[href^="http"]:before {
+	content: '';
+}
+
 article {
 	transition: width 0.4s;
 	background-color: #799197;
