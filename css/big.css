@@ -39,6 +39,15 @@ a {
 	font-weight: bold;
 }
 
+a[href^="http://"]:before {
+	content: '\f08e';
+	font-family: 'FontAwesome';
+	padding: 0 2px 0 0;
+	color: #bbb;
+	font-size: 10px;
+	display: inline-block;
+}
+
 article {
 	transition: width 0.4s;
 	background-color: #799197;
