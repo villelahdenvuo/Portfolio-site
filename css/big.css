@@ -39,7 +39,7 @@ a {
 	font-weight: bold;
 }
 
-a[href^="http://"]:before {
+a[href^="http://"]:before, a[href^="https://"]:before {
 	content: '\f08e';
 	font-family: 'FontAwesome';
 	padding: 0 2px 0 0;
