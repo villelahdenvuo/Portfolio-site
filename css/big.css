@@ -191,6 +191,8 @@ article:target p {
 }
 article:target img,
 article img:hover { box-shadow: #233 0 0 26px 10px; }
+/* Disable links when hidden. */
+article:not(:target) p a { pointer-events: none; }
 
 a:hover { text-decoration: underline; }
 header a:hover { text-decoration: none; }
