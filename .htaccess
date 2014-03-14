@@ -1,6 +1,15 @@
 # Use UTF-8 encoding for anything served text/plain or text/html
 AddDefaultCharset utf-8
 
+RewriteEngine On
+RewriteBase /
+# remove www-prefix
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# force https
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresDefault "access plus 10 days"
